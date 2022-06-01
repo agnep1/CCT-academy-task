@@ -29,6 +29,8 @@ def find_maximum_distance(
 ) -> int:
     if number_of_cities < 1 or number_of_cities > 10000:
         raise ValueError("Number of cities should be between 1 and 10000")
+    if max(cities_with_train_station) >= number_of_cities:
+        raise ValueError(f"City {max(cities_with_train_station)} is out of range")
 
     city_with_train_station_passed = False
     distance = 0
